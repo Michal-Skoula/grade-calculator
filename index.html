@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kalkulačka průměrů">
+  <meta name="keywords" content="Calculator, free, grades, school, czech, english">
+  <meta name="author" content="Michal Škoula">
+  <script src="script.js"></script>
+  <link rel="icon" type="image/jpeg" sizes="100x100" href="logo-cg.jpeg">
+  <link rel="stylesheet" href="style.css">
+  <title>Grades Calculator</title>
+</head>
+<body>
+  <section class="container">
+    <h1>Grade Average Calculator</h1>
+    <h3>Current Grade Average</h3>
+    <input onkeydown="isSpacebar()" class="grade-avg" type="number">
+    <h3>Total weight of current grades</h3>
+    <input onkeydown="isSpacebar()" class="grade-total-weight" type="number">
+    <h3>Next grade weight</h3>
+    <input onkeydown="isSpacebar()" class="next-grade-weight" type="number">
+    <h3>Target Grade %</h3>
+    <input class="target-grade-percentage" type="number" onkeydown="isSpacebar()">
+    <!-- <h1>Result</h1> -->
+    <button onclick="getResults()">Get results</button>
+    <h3 class="result">Result will appear here</h3>
+  </section> 
+</body>
+</html>
