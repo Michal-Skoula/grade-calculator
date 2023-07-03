@@ -1,43 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --background: rgb(189, 216, 244);
+  --body: rgb(255, 255, 255);
+  --text-main-clr: rgb(30, 30, 30);
+  --main-clr: rgb(126, 67, 198);
+}
 *{
   box-sizing: border-box;
   margin:0;
   padding:0;
-  font-family:arial;
+  font-family:'Open sans', sans-serif;
   font-size:62.5%;
 }
 body{
   width:100vw;
   min-height: 100vh;
+  display:grid;
+  place-items: center;
+  background-color: var(--background);
 }
 .container {
   display:grid;
-  align-self:center;
+  justify-items: center;
   margin:auto;
-  /* width:60vw; */
-  min-height:200px;
-  padding:4rem;
+  min-width: 90%;
+  background-color: var(--body);
+  border-radius:3rem;
 }
 h1 {
   font-size: 4rem;
   font-weight: 700;
-  margin-bottom:3rem;
+  margin:5rem 0 3rem 0;
+  color:var(--text-main-clr)
 }
 h3 {
   font-size: 3rem;
   font-weight: 500;
   margin-bottom: 1.5rem;
+  color:var(--text-main-clr)
 }
 input {
   height:4rem;
   margin-bottom: 3rem;
   font-size:3rem;
   max-width: 40%;
+  border-radius: 1rem;
+  width:800px;
 }
 button {
   display:inline-block;
   width:40%;
   padding:2rem;
-  margin:2rem 0;
-  margin-bottom:5rem;
+  margin:2rem 0 5rem 0;
   font-size:3rem;
+  border:none;
+  background-color: var(--main-clr);
+  border-radius:1.5rem;
+  color:var(--body);
+  font-weight: 600;
+  text-transform:capitalize;
+}
+@media(width > 800px) {
+  .container {
+    max-width: 1000px;
+    min-width:800px;
+  }
 }

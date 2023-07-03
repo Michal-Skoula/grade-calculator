@@ -13,19 +13,20 @@
   <title>Grades Calculator</title>
 </head>
 <body>
-  <section class="container">
+  <div class="container">
     <h1>Grade Average Calculator</h1>
     <h3>Current Grade Average</h3>
     <input onkeydown="isSpacebar()" class="grade-avg" type="number">
     <h3>Total weight of current grades</h3>
     <input onkeydown="isSpacebar()" class="grade-total-weight" type="number">
-    <h3>Next grade weight</h3>
+    <h3>Next grade weight (only for Calculator)</h3>
     <input onkeydown="isSpacebar()" class="next-grade-weight" type="number">
     <h3>Target Grade %</h3>
     <input class="target-grade-percentage" type="number" onkeydown="isSpacebar()">
     <!-- <h1>Result</h1> -->
-    <button onclick="getResults()">Get results</button>
+    <button onclick="getResults()">Get Grade Calculation</button>
+    <button onclick="gradeFixer()">Get Grade Recommendations</button>
     <h3 class="result">Result will appear here</h3>
-  </section> 
+  </div> 
 </body>
 </html>
