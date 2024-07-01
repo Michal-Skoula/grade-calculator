@@ -6,27 +6,59 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Kalkulačka průměrů">
   <meta name="keywords" content="Calculator, free, grades, school, czech, english">
-  <meta name="author" content="Michal Škoula">
-  <script src="script.js"></script>
-  <link rel="icon" type="image/jpeg" sizes="100x100" href="logo-cg.jpeg">
+  <meta name="author" content="Václav Klimeš & Michal Škoula">
+  <script src="script.js" defer></script>
+  <link rel="icon" type="image/jpeg" sizes="100x100" href="favicon.ico">
   <link rel="stylesheet" href="style.css">
-  <title>Grades Calculator</title>
+  <title>Kalkulačka průměrů</title>
 </head>
 <body>
-  <div class="container">
-    <h1>Grade Average Calculator</h1>
-    <h3>Current Grade Average</h3>
-    <input onkeydown="isSpacebar()" class="grade-avg" type="number">
-    <h3>Total weight of current grades</h3>
-    <input onkeydown="isSpacebar()" class="grade-total-weight" type="number">
-    <h3>Next grade weight (only for Calculator)</h3>
-    <input onkeydown="isSpacebar()" class="next-grade-weight" type="number">
-    <h3>Target Grade %</h3>
-    <input class="target-grade-percentage" type="number" onkeydown="isSpacebar()">
-    <!-- <h1>Result</h1> -->
-    <button onclick="getResults()">Get Grade Calculation</button>
-    <button onclick="gradeFixer()">Get Grade Recommendations</button>
-    <h3 class="result">Result will appear here</h3>
-  </div> 
+<header class="header">
+  <h1>Kalkulačka průměrů</h1>
+</header>
+<main class="flex-container">
+  <section class="calculator">
+    <h3>Kolik bodů potřebuju?</h3>
+
+    <label for="grade-avg-1"><h5>Aktuální průměr</h5></label>
+    <input type="text" id="grade-avg-1" class="grade-avg" placeholder="Např. 84,61">
+
+    <label for="grade-total-weight-1"><h5>Součet vah známek</h5></label>
+    <input type="text" id="grade-total-weight-1" class="grade-total-weight" placeholder="Např. 15">
+
+    <label for="next-grade-weight-1"><h5>Váha další známky</h5></label>
+    <input type="text" id="next-grade-weight-1" class="next-grade-weight" placeholder="Např. 7">
+
+    <label for="target-grade-percentage"><h5>Cílová známka %</h5></label>
+    <input type="text" id="target-grade-percentage" class="target-grade-percentage" placeholder="Např. 85">
+
+    <button onclick="getMinGrade()">Spočti známku</button>
+    <h3 class="minGradeResult">Výsledek se zobrazí zde</h3>
+  </section>
+  <section class="calculator">
+    <h3>Co když...</h3>
+
+    <label for="grade-avg-2"><h5>Aktuální průměr</h5></label>
+    <input type="text" id="grade-avg-2" class="grade-avg" placeholder="Např. 86,76">
+
+    <label for="grade-total-weight-2"><h5>Součet vah známek</h5></label>
+    <input type="text" id="grade-total-weight-2" class="grade-total-weight" placeholder="Např. 17">
+
+    <label for="next-grade-weight-2"><h5>Váha další známky</h5></label>
+    <input type="text" id="next-grade-weight-2" class="next-grade-weight" placeholder="Např. 10">
+
+    <label for="next-grade"><h5>Další známka</h5></label>
+    <input type="text" id="next-grade" class="next-grade" placeholder="Např. 40">
+
+    <button onclick="getAverage()">Spočti průměr</button>
+    <h3 class="new-average">Výsledek se zobrazí zde</h3>
+  </section>
+</main>
+<footer class="footer">
+  <p>Made by Michal Škoula and Václav Klimeš</p>
+  <a class="icon" href="https://github.com/Michal-Skoula/grade-calculator">
+    <img src="github.svg" alt="Github">
+  </a>
+</footer>
 </body>
 </html>

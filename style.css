@@ -1,68 +1,172 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
-:root{
-  --background: rgb(189, 216, 244);
-  --body: rgb(255, 255, 255);
-  --text-main-clr: rgb(30, 30, 30);
-  --main-clr: rgb(126, 67, 198);
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+:root {
+  --container-light: white;
+  --background-light: lightskyblue;
+  --text-main-clr-light: black;
+  --button-color-light: darkblue;
+  --button-text-color-light: white;
+
+  --container-dark: #2b2b2b;
+  --background-dark: #121212;
+  --text-main-clr-dark: white;
+  --button-color-dark: #1e88e5;
+  --button-text-color-dark: white;
 }
-*{
-  box-sizing: border-box;
-  margin:0;
-  padding:0;
-  font-family:'Open sans', sans-serif;
-  font-size:62.5%;
+
+* {
+  font-family: 'Roboto', sans-serif;
 }
-body{
-  width:100vw;
+
+body {
+  background: var(--background-light);
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
-  display:grid;
-  place-items: center;
-  background-color: var(--background);
 }
-.container {
-  display:grid;
-  justify-items: center;
-  margin:auto;
-  min-width: 90%;
-  background-color: var(--body);
-  border-radius:3rem;
+
+.header {
+  text-align: center;
+  padding: 1rem;
+  background-color: var(--container-light);
+  border-radius: 15px;
+  margin: 15px 20px;
 }
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--container-light);
+  margin: 15px 20px;
+  border-radius: 15px;
+  padding: 20px;
+}
+
+.calculator {
+  margin: 20px;
+  padding: 20px;
+  background: var(--container-light);
+  border-radius: 15px;
+  width: 100%;
+  max-width: 500px;
+}
+
 h1 {
-  font-size: 4rem;
+  font-size: 2.5rem;
   font-weight: 700;
-  margin:5rem 0 3rem 0;
-  color:var(--text-main-clr)
+  color: var(--text-main-clr-light);
 }
+
 h3 {
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 500;
-  margin-bottom: 1.5rem;
-  color:var(--text-main-clr)
+  margin-bottom: 1rem;
+  color: var(--text-main-clr-light);
+  text-align: center;
 }
+
+h5 {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--text-main-clr-light);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
 input {
-  height:4rem;
-  margin-bottom: 3rem;
-  font-size:3rem;
-  max-width: 40%;
-  border-radius: 1rem;
-  width:800px;
+  display: block;
+  margin: 0 auto 1rem auto;
+  padding: 0.5rem;
+  font-size: 1rem;
+  width: 90%;
+  max-width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: var(--container-light);
+  text-align: center;
 }
+
 button {
-  display:inline-block;
-  width:40%;
-  padding:2rem;
-  margin:2rem 0 5rem 0;
-  font-size:3rem;
-  border:none;
-  background-color: var(--main-clr);
-  border-radius:1.5rem;
-  color:var(--body);
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  padding: 0.75rem;
+  margin: 1rem auto;
+  border: none;
+  background-color: var(--button-color-light);
+  border-radius: 10px;
+  color: var(--button-text-color-light);
   font-weight: 600;
-  text-transform:capitalize;
+  font-size: 1rem;
+  cursor: pointer;
 }
-@media(width > 800px) {
-  .container {
-    max-width: 1000px;
-    min-width:800px;
+
+button:hover {
+  background-color: #004080;
+}
+
+.footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: var(--container-light);
+  border-radius: 15px;
+  margin: 15px 20px;
+}
+
+.footer p {
+  margin-bottom: 0.5rem;
+}
+
+.footer .icon img {
+  width: 40px;
+  height: 40px;
+  transition: filter 0.3s ease;
+}
+
+@media (min-width: 768px) {
+  .flex-container {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .calculator {
+    margin: 40px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: var(--background-dark);
+  }
+  .header {
+    background-color: var(--container-dark);
+  }
+  .flex-container {
+    background: var(--container-dark);
+  }
+  .calculator {
+    background: var(--container-dark);
+  }
+  h1, h3, h5 {
+    color: var(--text-main-clr-dark);
+  }
+  input {
+    background-color: var(--container-dark);
+    border: 1px solid #555;
+    color: var(--text-main-clr-dark);
+  }
+  button {
+    background-color: var(--button-color-dark);
+    color: var(--button-text-color-dark);
+  }
+  button:hover {
+    background-color: #1565c0;
+  }
+  .footer {
+    background-color: var(--container-dark);
+    color: var(--text-main-clr-dark);
+  }
+  .footer .icon img {
+    filter: invert(100%);
   }
 }
