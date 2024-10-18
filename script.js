@@ -84,3 +84,36 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+
+function getClasses() {
+  const absentClasses = parseFloat(document.getElementById('absence').value);
+  const totalClasses = parseFloat(document.getElementById('total-classes').value);
+  const maxAbsence = parseFloat(document.getElementById('max-absence').value) || 30;
+
+  function calculateRequiredClasses(absentClasses, totalClasses, maxAbsence) {
+    const currentAbsence = (absentClasses / totalClasses) * 100;
+    if (currentAbsence <= maxAbsence) {
+      return 0;
+    }
+    return 1 + calculateRequiredClasses(absentClasses, totalClasses + 1, maxAbsence);
+  }
+
+  function calculateMissableClasses(absentClasses, totalClasses, maxAbsence) {
+    const currentAbsence = (absentClasses / totalClasses) * 100;
+    if (currentAbsence > maxAbsence) {
+      return 0;
+    }
+    return 1 + calculateMissableClasses(absentClasses + 1, totalClasses + 1, maxAbsence);
+  }
+
+  const currentAbsence = (absentClasses / totalClasses) * 100;
+  if (currentAbsence > maxAbsence) {
+    const requiredClasses = calculateRequiredClasses(absentClasses, totalClasses, maxAbsence);
+    const classText = requiredClasses === 1 ? 'hodinu' : (requiredClasses >= 2 && requiredClasses <= 4) ? 'hodiny' : 'hodin';
+    document.querySelector('.present-classes').innerText = `Musíš přijít na ${requiredClasses} ${classText}.`;
+  } else {
+    const missableClasses = calculateMissableClasses(absentClasses, totalClasses, maxAbsence);
+    const classText = missableClasses === 1 ? 'hodinu' : (missableClasses >= 2 && missableClasses <= 4) ? 'hodiny' : 'hodin';
+    document.querySelector('.present-classes').innerText = `Můžeš zmeškat ještě ${missableClasses} ${classText}, než překročíš limit.`;
+  }
+}

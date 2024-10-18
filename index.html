@@ -10,11 +10,11 @@
   <script src="script.js" defer></script>
   <link rel="icon" type="image/jpeg" sizes="100x100" href="favicon.ico">
   <link rel="stylesheet" href="style.css">
-  <title>Kalkulačka průměrů</title>
+  <title>CG kalkulačka</title>
 </head>
 <body>
 <header class="header">
-  <h1>Kalkulačka průměrů</h1>
+  <h1>CG kalkulačka</h1>
 </header>
 <main class="flex-container">
   <section class="calculator">
@@ -52,6 +52,21 @@
 
     <button onclick="getAverage()">Spočti průměr</button>
     <h3 class="new-average">Výsledek se zobrazí zde</h3>
+  </section>
+  <section class="calculator">
+    <h3>Kalkulačka absence</h3>
+
+    <label for="grade-avg-2"><h5>Zamšekané hodiny předmětu</h5></label>
+    <input type="text" id="absence" class="absence" placeholder="Např. 7">
+
+    <label for="grade-total-weight-2"><h5>Součet všech hodin</h5></label>
+    <input type="text" id="total-classes" class="total-classes" placeholder="Např. 17">
+
+    <label for="grade-total-weight-2"><h5>Maximální absence (v procentech)</h5></label>
+    <input type="text" id="max-absence" class="max-absence" placeholder="30" value="30">
+
+    <button onclick="getClasses()">Spočti hodiny</button>
+    <h3 class="present-classes">Výsledek se zobrazí zde</h3>
   </section>
 </main>
 <footer class="footer">
